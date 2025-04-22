@@ -20,7 +20,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             
             // Store user name in localStorage
             if (type === "signup") {
-                localStorage.setItem("userName", postInputs.name);
+                localStorage.setItem("userName", postInputs.name || postInputs.username.split('@')[0]);
             } else {
                 // For signin, we need to fetch the user's name
                 try {
